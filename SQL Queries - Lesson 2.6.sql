@@ -57,4 +57,5 @@ HAVING avg_length>120;
 
 -- 8
 -- Rank films by length (filter out the rows that have nulls or 0s in length column). In your output, only select the columns title, length, and the rank.
--- ???
+select title, length, RANK() OVER(ORDER BY length DESC) as ranking
+from film;
